@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Portafolio de Prácticas web 🌐</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+	<link rel="apple-touch-icon" sizes="180x180" href="img/favicon_io/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="img/favicon_io/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="img/favicon_io/favicon-16x16.png">
+	<link rel="manifest" href="img/favicon_io/site.webmanifest">
+</head>
+
+
+<style>
+.card{
+    transition: transform .2s ease, box-shadow .2s ease;
+}
+.card:hover{
+    transform: translateY(-6px);
+    box-shadow: 0 .75rem 1.5rem rgba(0,0,0,.12)!important;
+}
+.card img{
+    transition: transform .25s ease;
+}
+.card:hover img{
+    transform: scale(1.05);
+}
+</style>
+
+
+
+<body class="bg-light min-vh-100 d-flex flex-column">
+
+<nav class="navbar navbar-expand-lg bg-white border-bottom">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="https://github.com/Rendel05?tab=repositories"><img src="https://avatars.githubusercontent.com/u/203216758?s=400&u=2dbfa378e0fe9bff892e6a82a6407e0cc4c1ef00&v=4" class="rounded-circle" style="width:3rem; height:auto; object-fit:cover;">	Mi portafolio web <i class="bi bi-filetype-html"></i><i class="bi bi-filetype-css"></i><i class="bi bi-filetype-js"></i></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+	  <span class="navbar-toggler-icon"></span>
+	</button>
+	<div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-3">
+        <li class="nav-item"><a class="nav-link" href="index.html"><i class="bi bi-journal-bookmark-fill"></i>	Portafolio</a></li>
+        <li class="nav-item"><a class="nav-link" href="https://github.com/Rendel05?tab=repositories"><i class="bi bi-github"></i>	Más repositorios</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<main class="container my-5">
+<section class="py-5">
+  <div class="container text-center">
+
+    <h2 class="fw-bold">Portafolio Web </h2> 
+    <p class="text-secondary mb-5">
+		Una colección de todos mis proyectos web realizados 
+    </p>
+
+	<div class="row g-4">
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 border-0 shadow-sm rounded-4">
+          <div class="bg-body-tertiary p-4 rounded-top-4">
+            <a href="practica1/index.html"><img src="img/img-pract/leaflet.png" class="img-fluid" alt="leaflet"></a>
+          </div>
+          <div class="card-body text-start">
+            <h5 class="fw-semibold">Mapas con leaflet		<i class="bi bi-globe-americas"></i></h5>
+            <p class="text-secondary mb-0">
+				Práctica de Leaflet orientada a la visualización de una ubicación específica en un mapa interactivo, 
+				incorporando un polígono para delimitar un área geográfica determinada.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 border-0 shadow-sm rounded-4">
+          <div class="bg-body-tertiary p-4 rounded-top-4">
+            <a href="practica2/index.html"><img src="img/img-pract/dragon ball.png" class="img-fluid" alt="Dragon Ball"></a>
+          </div>
+          <div class="card-body text-start">
+            <h5 class="fw-semibold">Dragon ball API		<i class="bi bi-yin-yang"></i></h5>
+            <p class="text-secondary mb-0">
+				Práctica enfocada en la llamada y consumo de una API pública con temática de Dragon Ball.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 border-0 shadow-sm rounded-4">
+          <div class="bg-body-tertiary p-4 rounded-top-4">
+            <a href="practica3/index.html"><img src="img/img-pract/android.png" class="img-fluid" alt="API móvil"></a>
+          </div>
+          <div class="card-body text-start">
+            <h5 class="fw-semibold">API móvil		<i class="bi bi-android2"></i></h5>
+            <p class="text-secondary mb-0">
+				Práctica enfocada en la llamada y consumo de la API propia desarrollada anteriormente para una aplicación móvil. 
+            </p>
+          </div>
+        </div>
+      </div>
+
+
+		  <div class="col-md-6 col-lg-4">
+			<div class="card h-100 border-0 shadow-sm rounded-4">
+			  <div class="bg-body-tertiary p-4 rounded-top-4">
+				<a href="practica4/index.html"><img src="img/img-pract/json.png" class="img-fluid" alt="DummyJson"></a>
+			  </div>
+			  <div class="card-body text-start">
+				<h5 class="fw-semibold">DummyJSON		<i class="bi bi-filetype-json"></i></h5>
+				<p class="text-secondary mb-0">
+					Práctica enfocada en el consumo de la API pública DummyJSON para la construcción de un dashboard de productos, 
+					permitiendo la visualización y simulación de operaciones CRUD (crear, leer, actualizar y eliminar).
+				</p>
+			  </div>
+			</div>
+		  </div>
+		  
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 border-0 shadow-sm rounded-4">
+          <div class="bg-body-tertiary p-4 rounded-top-4">
+            <img src="https://via.placeholder.com/400x220" class="img-fluid" alt="Mojiu">
+          </div>
+          <div class="card-body text-start">
+            <h5 class="fw-semibold">Mojiu</h5>
+            <p class="text-secondary mb-0">
+              Mojiu, a venture powered by the professional team at Zeroqode,
+              is a unique and powerful GPT solution.
+            </p>
+          </div>
+        </div>
+      </div>
+
+
+
+    </div>
+  </div>
+</section>
+</main>
+<footer class="mt-auto bg-dark text-secondary text-center p-3 lh-base small">
+    <p class="mb-1">
+      Portafolio web de proyectos · v1.0 · Servidor:
+      <span id="fechaHora"></span>
+    </p>
+
+    <p class="mb-1">
+      Desarrollado por
+      <a href="https://github.com/Rendel05"
+         class="fw-bold text-primary text-decoration-none"
+         target="_blank" rel="noopener">
+        Pedro M
+      </a>
+      · 2026
+    </p>
+
+    <p class="mb-0">
+      © 2026 Rendel 05 — Todos los derechos reservados.
+    </p>
+  </footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+  setInterval(()=>{
+  document.getElementById('fechaHora').textContent =
+    new Date().toLocaleString('es-MX');
+},1000);
+
+</script>
+
+
+</body>
+
+</html>

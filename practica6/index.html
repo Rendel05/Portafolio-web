@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>FBI Wanted Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+		<link rel="apple-touch-icon" sizes="180x180" href="img/favicon_io/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="img/favicon_io/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="img/favicon_io/favicon-16x16.png">
+	<link rel="manifest" href="img/favicon_io/site.webmanifest">
+</head>
+<body class="bg-light">
+
+<nav class="navbar navbar-dark bg-dark">
+    <div class="container">
+        <span class="navbar-brand mb-0 h1"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/New_seal_of_the_Federal_Bureau_of_Investigation.svg/250px-New_seal_of_the_Federal_Bureau_of_Investigation.svg.png" alt="FBI logo" style="width:4rem; height:auto;">			Los más buscados por el FBI</span>
+    </div>
+</nav>
+
+<div class="container my-4">
+
+    <div class="row g-3 mb-4">
+        <div class="col-md-4">
+            <input type="text" id="searchInput" class="form-control" placeholder="Buscar por nombre">
+        </div>
+        <div class="col-md-3">
+            <select id="pageSizeSelect" class="form-select">
+                <option value="10">10 por página</option>
+                <option value="20" selected>20 por página</option>
+                <option value="50">50 por página</option>
+            </select>
+        </div>
+        <div class="col-md-5 text-md-end">
+            <h5>Total: <span id="totalRecords">0</span></h5>
+        </div>
+    </div>
+
+    <div id="loading" class="text-center my-4">
+        <div class="spinner-border text-primary"></div>
+    </div>
+
+    <div class="row" id="wantedContainer"></div>
+
+    <nav class="mt-4">
+        <ul class="pagination justify-content-center" id="pagination"></ul>
+    </nav>
+
+</div>
+
+<div class="modal fade" id="detailModal" tabindex="-1">
+    <div class="modal-dialog modal-lg modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalTitle"></h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body" id="modalBody"></div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,4 +1,5 @@
 const urlApi = "https://api.github.com/users/rendel05";
+const urlApiRep = "https://api.github.com/repos/rendel05";
 
 document.addEventListener("DOMContentLoaded", () => {
     cargarUsuario();
@@ -64,12 +65,105 @@ const generarRepos = (data) => {
                         <p class="card-text">${repo.description ?? "Sin descripción"}</p>
                         <a href="${repo.html_url}" target="_blank" class="btn btn-dark btn-sm">Ver repositorio en Github	 <i class="bi bi-github"></i></a>
                     </div>
+					<div class="card-footer" id="${repo.name}"></div>
                 </div>
             </div>
         `;
+		
+		cargarLenguajes(repo.name);
     });
+	contenedor.innerHTML = html;
+		
+};
 
-    contenedor.innerHTML = html;
+const cargarLenguajes = (nombre) => {
+	fetch(`https://api.github.com/repos/Rendel05/${nombre}/languages`)
+	.then(res => res.json())
+	.then(data => {
+		generarLenguajes(data,nombre);
+	//})
+	//.catch(() => {
+		//alert("error al cargar los lenguajes");
+	});
+};
+
+const generarLenguajes = (data,nombre) => {
+	const div = document.getElementById(`${nombre}`);
+	let html = "";
+	let total = sum(data);
+	let percent = porcentajes(data,total);
+	console.log(percent);
+	
+	let barra = `
+		<div style="
+			display:flex;
+			width:90%;
+			height:15px;
+			margin-left:5%;
+			border-radius:1rem;
+			overflow:hidden;
+			background:#e9ecef;
+		">
+		`;
+
+		Object.entries(data).forEach(([clave, valor]) => {
+			let p = porcentaje(valor,total);
+
+			barra += `
+			<div style="
+				width:${p}%;
+				background:${colorLenguaje(clave)};
+			">
+			</div>
+			`;
+		});
+
+		barra += `</div>`;
+	html+=barra;
+	Object.entries(data).forEach(([clave, valor]) => {
+		html += `
+		<span class="${clave.toLowerCase()}" style="font-size:small; margin-right:1rem;"> <i class="bi bi-record-fill"></i>${clave}: ${porcentaje(valor,total)}</span>
+		`;
+	});
+	
+	//generarBarra
+	div.innerHTML = html;
+};
+
+const porcentajes = (data,total) => {
+	let percent = [];
+	Object.entries(data).forEach(([clave, valor]) => {
+		percent.push(porcentaje(valor,total));
+	});
+	return percent;
+};
+
+const colorLenguaje = (nombre) => {
+	const colores = {
+		HTML: "#E34F26",
+		CSS: "#1572B6",
+		JavaScript: "#F7DF1E"
+	};
+
+	return colores[nombre] || "#6c757d";
+};
+
+
+
+const sum = (data) => {
+	let total = 0;
+	
+	Object.entries(data).forEach(([clave, valor])=> {
+		total += valor;
+	});
+	
+	return total;
+};
+
+const porcentaje = (valor,total) =>{
+	let porcentaje=0;
+	porcentaje= valor*100/total;
+	return porcentaje.toFixed(2);
 };
 
 
